@@ -1,0 +1,122 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  font-family: 'PT Sans', sans-serif; /* Applied PT Sans to body */
+}
+
+@layer base {
+  :root {
+    --background: 300 47% 96%; /* #F3E5F5 Light Purple */
+    --foreground: 261 25% 25%; /* Darker, slightly desaturated purple for text */
+    
+    --card: 300 60% 99%; /* Almost white, slight purple tint */
+    --card-foreground: 261 25% 25%;
+    
+    --popover: 300 60% 99%;
+    --popover-foreground: 261 25% 25%;
+    
+    --primary: 261 51% 54%; /* #673AB7 Deep Purple */
+    --primary-foreground: 300 0% 100%; /* White */
+    
+    --secondary: 261 40% 88%; /* Lighter shade of primary */
+    --secondary-foreground: 261 51% 54%; /* Primary color for text on secondary */
+    
+    --muted: 300 30% 92%; /* Muted version of background */
+    --muted-foreground: 261 20% 50%; /* Muted text color */
+    
+    --accent: 340 82% 52%; /* #E91E63 Vibrant Pink */
+    --accent-foreground: 300 0% 100%; /* White */
+    
+    --destructive: 0 84.2% 60.2%; /* Default ShadCN Red */
+    --destructive-foreground: 0 0% 98%; /* Default ShadCN Light Red Text */
+    
+    --border: 300 20% 85%; /* Border color related to background */
+    --input: 300 30% 90%; /* Input background, slightly darker than card */
+    --ring: 261 51% 54%; /* Primary color for focus rings */
+    
+    --radius: 0.5rem;
+
+    --chart-1: hsl(261 51% 54%); /* Primary */
+    --chart-2: hsl(340 82% 62%); /* Accent slightly lighter */
+    --chart-3: hsl(261 40% 78%); /* Secondary slightly lighter */
+    --chart-4: hsl(300 30% 82%); /* Muted slightly lighter */
+    --chart-5: hsl(261 25% 45%); /* Foreground slightly lighter */
+
+    /* Sidebar specific colors for light theme (can be same as main if desired) */
+    --sidebar-background: hsl(var(--background)); 
+    --sidebar-foreground: hsl(var(--foreground));
+    --sidebar-primary: hsl(var(--primary));
+    --sidebar-primary-foreground: hsl(var(--primary-foreground));
+    --sidebar-accent: hsl(var(--accent));
+    --sidebar-accent-foreground: hsl(var(--accent-foreground));
+    --sidebar-border: hsl(var(--border));
+    --sidebar-ring: hsl(var(--ring));
+  }
+
+  .dark {
+    --background: 261 20% 10%; /* Very Dark Purple */
+    --foreground: 300 40% 90%; /* Light Grey/Off-white with slight purple tint */
+    
+    --card: 261 20% 15%; /* Darker Purple for cards */
+    --card-foreground: 300 40% 90%;
+    
+    --popover: 261 20% 15%;
+    --popover-foreground: 300 40% 90%;
+    
+    --primary: 261 51% 65%; /* #7E57C2 - Lighter Deep Purple for dark mode */
+    --primary-foreground: 300 0% 100%; /* White */
+    
+    --secondary: 261 30% 25%; /* Darker shade of primary for dark mode secondary */
+    --secondary-foreground: 300 40% 90%;
+    
+    --muted: 261 20% 20%; /* Dark muted purple */
+    --muted-foreground: 300 30% 70%; /* Lighter muted text */
+    
+    --accent: 340 82% 60%; /* #EC407A - Lighter Vibrant Pink for dark mode */
+    --accent-foreground: 300 0% 100%; /* White */
+    
+    --destructive: 0 72% 51%; /* Slightly adjusted Red for dark mode */
+    --destructive-foreground: 0 0% 98%;
+    
+    --border: 261 20% 25%; /* Darker border */
+    --input: 261 20% 22%; /* Darker input background */
+    --ring: 261 51% 65%; /* Lighter primary for focus rings in dark mode */
+
+    --chart-1: hsl(261 51% 65%); /* Primary (dark) */
+    --chart-2: hsl(340 82% 70%); /* Accent (dark) slightly lighter */
+    --chart-3: hsl(261 30% 45%); /* Secondary (dark) slightly lighter */
+    --chart-4: hsl(261 20% 40%); /* Muted (dark) slightly lighter */
+    --chart-5: hsl(300 40% 80%); /* Foreground (dark) slightly lighter */
+    
+    /* Sidebar specific colors for dark theme */
+    --sidebar-background: hsl(var(--background));
+    --sidebar-foreground: hsl(var(--foreground));
+    --sidebar-primary: hsl(var(--primary));
+    --sidebar-primary-foreground: hsl(var(--primary-foreground));
+    --sidebar-accent: hsl(var(--accent));
+    --sidebar-accent-foreground: hsl(var(--accent-foreground));
+    --sidebar-border: hsl(var(--border));
+    --sidebar-ring: hsl(var(--ring));
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'PT Sans', 'Arial', sans-serif; /* Ensure PT Sans is primary */
+  }
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-headline;
+     font-family: 'PT Sans', 'Arial', sans-serif; /* Ensure PT Sans is primary */
+  }
+  code, pre {
+    @apply font-code;
+    font-family: 'Source Code Pro', monospace; /* Ensure Source Code Pro is primary */
+  }
+}
